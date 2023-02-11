@@ -39,15 +39,14 @@ class MainController extends Controller
 
         // Если сохранение в базу произошло успешно, то выводим соотв. сообщение
         if ($save) {
-            return back()->with('success', 'New User has been successfuly added to database!');
+            return back()->with('success', 'Новый пользователь успешно зарегистрирован');
         }else {
             // иначе выводим текст с ошибкой!
-            return back()->with('fail', "something went wrong, try again later");
+            return back()->with('fail', "Что-то пошло не так");
         }
     }
 
     public function check (Request $request) {
-         //  return $request->input();
 
         $request->validate([
             'email' => 'required|email',
